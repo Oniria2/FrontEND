@@ -14,6 +14,7 @@ export default function Index() {
   const [number, onChangeNumber] = React.useState('');
 
   const router = useRouter();
+//
 
   const handleRedirect = () => {
     router.navigate({
