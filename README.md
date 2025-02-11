@@ -34,4 +34,3 @@ Ce dossier sert à stocker à un seul endroit toute les ressources que nous trou
 ## Auteurs 
 
 [Anthonin Helias](https://github.com/AnthoninHelias). 
-
