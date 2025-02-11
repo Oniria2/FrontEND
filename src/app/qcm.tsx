@@ -8,6 +8,11 @@ import MyButton from '../Component/MyButton';
 import { Stack } from 'expo-router';
 import TimerComponent from "../Component/TimerComponent";
 
+
+
+
+//
+//
 export default function Index() {
 
   const params = useLocalSearchParams();
