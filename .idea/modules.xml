@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/QcmReactNative.iml" filepath="$PROJECT_DIR$/.idea/QcmReactNative.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FrontEND.iml" filepath="$PROJECT_DIR$/.idea/FrontEND.iml" />
     </modules>
   </component>
 </project>
