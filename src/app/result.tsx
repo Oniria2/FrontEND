@@ -20,7 +20,7 @@ export default function Result() {
             />
             <Text style={styles.title}>Félicitations {params.name}!</Text>
             <Text style={styles.resultText}>Votre résultat est de {params.score} points !!!</Text>
-            <Button title="Refaire le Quizz" onPress={handleReplay} color="#8A4FBF" />
+            <Button title="Rejouer le Quiz" onPress={handleReplay} color="#8A4FBF" />
         </View>
     );
 }
