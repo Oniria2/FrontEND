@@ -15,6 +15,7 @@ export default function Result() {
     return (
         <View style={styles.container}>
             <Image
+                // eslint-disable-next-line @typescript-eslint/no-require-imports
                 source={require('../../assets/trophé.png')}
                 style={styles.image}
             />

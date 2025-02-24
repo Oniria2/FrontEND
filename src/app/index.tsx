@@ -1,4 +1,4 @@
-import { Link, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -11,6 +11,7 @@ import { Image } from 'react-native';
 export default function Index() {
 
   const [text, onChangeText] = React.useState('');
+    // eslint-disable-next-line
   const [number, onChangeNumber] = React.useState('');
 
   const router = useRouter();
@@ -29,6 +30,7 @@ export default function Index() {
       <SafeAreaView>
        <View style={styles.container2}>
         <Image
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
           source={require('../../assets/MonImage.jpeg')}
           style={styles.logo}
         />
