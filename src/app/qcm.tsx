@@ -1,6 +1,6 @@
-import { Link, Redirect, useLocalSearchParams } from 'expo-router';
+import {  useLocalSearchParams } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { router } from 'expo-router';
@@ -29,6 +29,7 @@ export default function Index() {
   const fetchResponsesByQuestionId = async (id: number) => {
     try {
       const response = await axios.get(`https://qcm-api-a108ec633b51.herokuapp.com/reponse/${id}`);
+      // eslint-disable-next-line
       return response.data.rows.map((row: any) => ({ title: row.titre, correct: row.correct }));
     } catch (error) {
       console.error('Error fetching responses:', error);
