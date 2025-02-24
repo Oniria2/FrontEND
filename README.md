@@ -31,6 +31,6 @@ Husky permet d'analyser le code avant d'effectuer un commit en utilisant nos dif
 
 Ce dossier sert à stocker à un seul endroit toute les ressources que nous trouvons utiles pour notre projet.
 
-## Auteurs 
+## Auteur
 
 [Anthonin Helias](https://github.com/AnthoninHelias). 
