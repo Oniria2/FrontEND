@@ -3,6 +3,29 @@
 Pour commencer à travailler sur ce projet il faut dans un premier temps installer toute les dépendances nécessaires au projet. <br />
 Veuillez exécuter cette commande dans votre terminal : `npm install --force`.
 
+## Les commandes git 
+
+Pour cloner le projet pour le récupérer en local il faut éxecuter la commande suivante : 
+ git clone <ssh-du-repository> ou git clone <url-du-repository>
+
+Pout Ajouter les modifications il faut éxecuter la commande suivante : 
+ git add .
+
+Pour créer un commit il faut éxecuter la commande suivante : 
+ git commit -m "Votre message de commit qui dit explicitement ce que le commit fait"
+
+Pour envoyer le code sur github il faut éxecuter la commande suivante : 
+ git push 
+
+## Les bonnes pratiques de code 
+
+Les bonnes pratiques de code a appliquer obligatoirement a ce projet :
+   - Créer une branche sur laquelle travailler et ne pas coder directement sur la branche main
+   - Le nom de la branche doit étre en rapport avec la tache a effectué
+   - Faire plusieurs commit et push et ne pas faire un gros push a la fin
+   - Lors de la merge request il faut mettre le label review , s'assigné , mettre l'issue ,  et ajouter un reviewer autre que soit
+   - Il ne faut pas forcer le merge de la merge request et attendre que le reviewer le fasse
+
 ## Démarrer l'application
 
 Pour démarrer l'application sur le téléphone il faut lancer la commande suivante : ` npm start`.
