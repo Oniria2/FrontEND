@@ -12,6 +12,8 @@ const MyButton = ({ handleRedirect, buttonText }: { handleRedirect: () => void; 
     );
 };
 
+const jessica = 1;
+
 const styles = {    
     btn: {
         width: 250,
