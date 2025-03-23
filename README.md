@@ -5,16 +5,16 @@ Veuillez exécuter cette commande dans votre terminal : `npm install --force`.
 
 ## Les commandes git 
 
-Pour cloner le projet pour le récupérer en local il faut éxecuter la commande suivante : 
+Pour cloner le projet pour le récupérer en local il faut éxecuter la commande suivante :  <br />
 `git clone <ssh-du-repository> ou git clone <url-du-repository>`
 
-Pout Ajouter les modifications il faut éxecuter la commande suivante : 
+Pout Ajouter les modifications il faut éxecuter la commande suivante :  <br />
 `git add .`
 
-Pour créer un commit il faut éxecuter la commande suivante : 
+Pour créer un commit il faut éxecuter la commande suivante :  <br />
 `git commit -m "Votre message de commit qui dit explicitement ce que le commit fait"`
 
-Pour envoyer le code sur github il faut éxecuter la commande suivante : 
+Pour envoyer le code sur github il faut éxecuter la commande suivante :  <br />
 `git push` 
 
 ## Les bonnes pratiques de code 
