@@ -6,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 import { router } from 'expo-router';
 import MyButton from '../Component/MyButton';
 import { Stack } from 'expo-router';
-import TimerComponent from "../Component/TimerComponent";
 
 export default function Index() {
 
@@ -86,7 +85,6 @@ export default function Index() {
       <Text style={styles.score}>Score: {score}</Text>
       <Stack.Screen options={{ title: 'Quizz', headerStyle: { backgroundColor: 'white' } }} />
       <Text style={styles.size}>Bonjour {params.name}!!</Text>
-      <TimerComponent duration={10} />
       <Text style={styles.size}>{question}</Text>
       {responses.map((response, index) => (
         <View style={styles.pad} key={index}>
