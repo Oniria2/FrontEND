@@ -35,7 +35,7 @@ export default function Index() {
           style={styles.logo}
         />
         </View>
-        <Text style = {styles.welcomeText}>Bienvenue dans notre App de QCM!!</Text>
+        <Text style = {styles.welcomeText}>Bienvenue sur votre questionnaire </Text>
         <TextInput
           style={styles.input}
           onChangeText={onChangeText}
@@ -44,7 +44,7 @@ export default function Index() {
         <StatusBar style="auto" />
 
         <View style={styles.container2}>
-        <MyButton handleRedirect={handleRedirect} buttonText='commencer le QCM ' />
+        <MyButton handleRedirect={handleRedirect} buttonText='commencer le questionnaire ' />
         </View>
       </SafeAreaView>
     </View>
