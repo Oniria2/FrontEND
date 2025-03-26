@@ -31,7 +31,7 @@ export default function Index() {
        <View style={styles.container2}>
         <Image
             // eslint-disable-next-line @typescript-eslint/no-require-imports
-          source={require('../../assets/MonImage.jpeg')}
+          source={require('../../assets/StartImage.png')}
           style={styles.logo}
         />
         </View>
