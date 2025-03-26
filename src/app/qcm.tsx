@@ -83,7 +83,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       {/* La ligne suivante pour afficher le score, elle doit être mise en commentaire hors des phases de test */}
-      <Text style={styles.score}>Score: {score}</Text>
+      {/* <Text style={styles.score}>Score: {score}</Text>*/}
       <Stack.Screen options={{ title: 'Questionnaire', headerStyle: { backgroundColor: 'white' } }} />
       <Text style={styles.size}>Bonjour {params.name}!!</Text>
       <Text style={styles.size}>{question}</Text>

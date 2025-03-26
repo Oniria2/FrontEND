@@ -23,7 +23,7 @@ export default function Result() {
             />
             <Text style={styles.title}>Merci d'avoir pris le temps de répondre a notre questionnaire  {'\n'} {params.name}. </Text>
             {/* La ligne suivante pour afficher le score, elle doit être mise en commentaire hors des phases de test */}
-            <Text style={styles.resultText}>Votre résultat est de {params.score} </Text>
+            {/*<Text style={styles.resultText}>Votre résultat est de {params.score} </Text>*/}
             <Button title=" Retour a l'accueil " onPress={handleReplay} color="#8A4FBF" />
         </View>
     );
