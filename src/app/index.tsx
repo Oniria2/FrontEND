@@ -26,7 +26,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ title: 'Quizz', headerStyle: { backgroundColor: "#8A4FBF" } }} />
+      <Stack.Screen options={{ title: 'Accueil', headerStyle: { backgroundColor: "#8A4FBF" } }} />
       <SafeAreaView>
        <View style={styles.container2}>
         <Image
