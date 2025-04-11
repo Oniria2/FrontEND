@@ -123,6 +123,10 @@ For more information, visit the [Husky documentation](https://typicode.github.io
 
 This folder is used to store all the useful resources for our project in one place.
 
+## License
+This project is under a **custom restrictive license**. Any use, distribution, or modification without written permission from AnthoninHelias is strictly prohibited.
+See [LICENSE.txt](./LICENSE.txt) for details.
+
 ## Author
 
 [Anthonin Helias](https://github.com/AnthoninHelias).
