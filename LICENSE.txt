@@ -1,0 +1,51 @@
+CUSTOM LICENSE — AnthoninHelias  
+Copyright © [2025] AnthoninHelias  
+All Rights Reserved.
+
+No person or entity is permitted to use, copy, reproduce, modify, distribute, display, or execute this software or any portion of it for any purpose — including personal, internal, educational, or commercial — without the **prior written permission** of the copyright holder (AnthoninHelias).
+
+-------------------------
+STRICT RESTRICTIONS:
+-------------------------
+
+1. NO USAGE WITHOUT PERMISSION  
+   This Software may not be used, executed, modified, or adapted for any reason or in any context — including private or offline environments — without written consent from AnthoninHelias.
+
+2. NO COPYING OR REUSE  
+   No part of this Software, whether in original or modified form, may be copied, reused, repurposed, or incorporated into any other project or product, in whole or in part, without explicit authorization.
+
+3. NO COMMERCIAL OR PUBLIC USE  
+   This Software may not be sold, licensed, rented, hosted, or published, including uploading to public repositories or code-sharing platforms (e.g., GitHub, GitLab, etc.), without prior written approval.
+
+4. NO CODE SNIPPET EXTRACTION  
+   Extracting or reusing individual functions, logic blocks, or structural ideas from this Software is strictly prohibited without authorization.
+
+5. NO REVERSE ENGINEERING  
+   Decompiling, reverse engineering, or disassembling the Software is forbidden.
+
+6. ATTRIBUTION & AUTHORSHIP  
+   The original creator and sole copyright holder of this Software is **AnthoninHelias**.  
+   Authorship must always be credited, and you may not claim ownership — even for modified or derivative works.
+
+7. COPYRIGHT & MORAL RIGHTS  
+   AnthoninHelias retains full copyright and **moral rights**, including:
+   - The right of authorship (paternity)
+   - The right to object to misrepresentation or alteration
+   - The exclusive right to control distribution and reproduction
+
+8. DERIVATIVE WORKS AND MODIFICATIONS  
+   Any project or work that includes, incorporates, modifies, or is based in part or in whole on this Software is considered an **unauthorized derivative work** unless explicitly authorized.
+
+   AnthoninHelias **reserves the right to demand takedown**, seek legal remedy, and claim damages for any such violations.
+
+-------------------------
+DISCLAIMER:
+-------------------------
+This Software is provided "as is", without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.  
+In no event shall the author be liable for any claim, damages, or other liability arising from the use or misuse of the Software.
+
+-------------------------
+CONTACT:
+-------------------------
+To request written authorization, contact AnthoninHelias directly.
+
