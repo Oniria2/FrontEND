@@ -3,6 +3,10 @@
 Pour commencer à travailler sur ce projet il faut dans un premier temps installer toute les dépendances nécessaires au projet. <br />
 Veuillez exécuter cette commande dans votre terminal : `npm install --force`.
 
+## Licence
+Ce projet est soumis à une **licence restrictive personnalisée**. Toute utilisation, distribution ou modification sans l'autorisation écrite d'AnthoninHelias est strictement interdite.  
+Voir [LICENSE.txt](./LICENSE.txt) pour plus de détails.
+
 ## Les commandes git 
 
 Pour cloner le projet pour le récupérer en local il faut éxecuter la commande suivante :  <br />
