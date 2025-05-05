@@ -28,10 +28,12 @@ STRICT RESTRICTIONS:
    Authorship must always be credited, and you may not claim ownership — even for modified or derivative works.
 
 7. COPYRIGHT & MORAL RIGHTS  
-   AnthoninHelias retains full copyright and **moral rights**, including:
-   - The right of authorship (paternity)
-   - The right to object to misrepresentation or alteration
-   - The exclusive right to control distribution and reproduction
+   AnthoninHelias retains **full and exclusive copyright** as well as **moral rights**, including but not limited to:  
+   - The **right of paternity** (authorship recognition)  
+   - The **right of integrity** (to oppose any distortion, mutilation, or other modification)  
+   - The **right to disclosure** and to control the first public release  
+   - The **right to withdraw or retract** the work under legal conditions  
+   - The **exclusive right** to authorize reproduction, distribution, and derivative works
 
 8. DERIVATIVE WORKS AND MODIFICATIONS  
    Any project or work that includes, incorporates, modifies, or is based in part or in whole on this Software is considered an **unauthorized derivative work** unless explicitly authorized.
