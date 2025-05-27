@@ -1,8 +1,8 @@
 {
   "expo": {
     "scheme": "Qcm",
-    "name": "FrontEND",
-    "slug": "FrontEND",
+    "name": "Oniria",
+    "slug": "Oniria",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,8 +12,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    
-    
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -24,13 +22,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.heliasanthonin.Oniria"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "1d574e4c-166e-4340-bcaa-5254802025de"
+      }
+    }
   }
 }
