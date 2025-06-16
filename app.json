@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.heliasanthonin.Oniria"
+      "package": "com.heliasanthonin.FrontEND"
     },
     "web": {
       "favicon": "./assets/favicon.png"
