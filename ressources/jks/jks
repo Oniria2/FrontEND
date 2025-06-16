@@ -29,3 +29,9 @@
     "production": {}
   }
 }
+
+
+C:\Program Files\Java\jdk-24\bin>keytool -genkeypair -v -storetype PKCS12 -keystore oniria.keystore -alias oniria -keyalg RSA -keysize 2048 -validity 20000 -storepass oniria -keypass oniria -dname "CN=oniria, OU=oniria, O=oniria, L=oniria, ST=France, C=FR"
+Generating 2048-bit RSA key pair and self-signed certificate (SHA384withRSA) with a validity of 20?000 days
+        for: CN=oniria, OU=oniria, O=oniria, L=oniria, ST=France, C=FR
+[Storing oniria.keystore]
