@@ -1,0 +1,2 @@
+ npx eas build -p android --profile production
+ npx expo credentials:manager -p android

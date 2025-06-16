@@ -1,0 +1,37 @@
+{
+  "cli": {
+    "version": ">= 16.6.2",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle",
+        "credentialsSource": "local",
+        "keystore": {
+          "keystorePath": "oniria.keystore",
+          "keystorePassword": "oniria",
+          "keyAlias": "oniria",
+          "keyPassword": "oniria"
+        }
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
+
+C:\Program Files\Java\jdk-24\bin>keytool -genkeypair -v -storetype PKCS12 -keystore oniria.keystore -alias oniria -keyalg RSA -keysize 2048 -validity 20000 -storepass oniria -keypass oniria -dname "CN=oniria, OU=oniria, O=oniria, L=oniria, ST=France, C=FR"
+Generating 2048-bit RSA key pair and self-signed certificate (SHA384withRSA) with a validity of 20?000 days
+        for: CN=oniria, OU=oniria, O=oniria, L=oniria, ST=France, C=FR
+[Storing oniria.keystore]
