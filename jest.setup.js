@@ -21,22 +21,27 @@ jest.mock('expo-status-bar', () => ({
 }));
 
 // Mock expo-router
+const mockNavigate = jest.fn();
+const mockPush = jest.fn();
+const mockReplace = jest.fn();
+const mockBack = jest.fn();
+
 jest.mock('expo-router', () => ({
   useRouter: () => ({
-    navigate: jest.fn(),
-    push: jest.fn(),
-    replace: jest.fn(),
-    back: jest.fn(),
+    navigate: mockNavigate,
+    push: mockPush,
+    replace: mockReplace,
+    back: mockBack,
   }),
   useLocalSearchParams: () => ({
     name: 'TestUser',
     score: '3',
   }),
   router: {
-    navigate: jest.fn(),
-    push: jest.fn(),
-    replace: jest.fn(),
-    back: jest.fn(),
+    navigate: mockNavigate,
+    push: mockPush,
+    replace: mockReplace,
+    back: mockBack,
   },
   Stack: {
     Screen: ({ children, ...props }) => children,
@@ -117,9 +122,23 @@ jest.mock('react-native-paper', () => {
 });
 
 // Mock axios
+const mockAxiosGet = jest.fn(() => Promise.resolve({ 
+  data: { 
+    intitule: 'Question de test',
+    id: 1 
+  } 
+}));
+
+const mockAxiosPost = jest.fn(() => Promise.resolve({ 
+  data: [
+    { id: 1, intitule: 'Réponse correcte', correct: true },
+    { id: 2, intitule: 'Réponse incorrecte', correct: false }
+  ] 
+}));
+
 jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: {} })),
-  post: jest.fn(() => Promise.resolve({ data: {} })),
+  get: mockAxiosGet,
+  post: mockAxiosPost,
   put: jest.fn(() => Promise.resolve({ data: {} })),
   delete: jest.fn(() => Promise.resolve({ data: {} })),
 }));
