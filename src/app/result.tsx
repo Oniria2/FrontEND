@@ -7,10 +7,15 @@ export default function Result() {
     const params = useLocalSearchParams();
     
     const handleReplay = () => {
-        // Logique pour rejouer le quiz
-        router.navigate({
-            pathname: '/',
-        });
+        try {
+            // Logique pour rejouer le quiz
+            router.navigate({
+                pathname: '/',
+            });
+        } catch (error) {
+            console.log('Navigation error:', error);
+            // Optionally show user feedback about navigation error
+        }
     };
 
     return (

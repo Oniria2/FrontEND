@@ -43,11 +43,20 @@ jest.mock('expo-router', () => ({
     replace: mockReplace,
     back: mockBack,
   },
-  Stack: ({ children, ...props }) => {
-    const React = require('react');
-    const { View } = require('react-native');
-    return React.createElement(View, { testID: 'stack', ...props }, children);
-  },
+  Stack: Object.assign(
+    ({ children, ...props }) => {
+      const React = require('react');
+      const { View } = require('react-native');
+      return React.createElement(View, { testID: 'stack', ...props }, children);
+    },
+    {
+      Screen: ({ children, ...props }) => {
+        const React = require('react');
+        const { View } = require('react-native');
+        return React.createElement(View, { testID: 'stack-screen', ...props }, children);
+      },
+    }
+  ),
 }));
 
 // Mock react-native-safe-area-context
@@ -193,3 +202,9 @@ afterAll(() => {
   console.warn = originalWarn;
   console.error = originalError;
 });
+
+// Export mocks for use in tests
+global.mockNavigate = mockNavigate;
+global.mockPush = mockPush;
+global.mockReplace = mockReplace;
+global.mockBack = mockBack;

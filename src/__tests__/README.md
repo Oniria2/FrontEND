@@ -14,11 +14,16 @@ src/__tests__/
 ├── Component/                    # Tests des composants réutilisables
 │   ├── MyButton.test.tsx        # Tests du composant bouton personnalisé
 │   └── TimerComponent.test.tsx   # Tests du composant timer
-└── app/                         # Tests des écrans de l'application
-    ├── _layout.test.tsx         # Tests du layout principal
-    ├── index.test.tsx           # Tests de l'écran d'accueil
-    ├── qcm.test.tsx            # Tests de l'écran de questionnaire
-    └── result.test.tsx         # Tests de l'écran de résultats
+├── app/                         # Tests des écrans de l'application
+│   ├── _layout.test.tsx         # Tests du layout principal
+│   ├── index.test.tsx           # Tests de l'écran d'accueil
+│   ├── qcm.test.tsx            # Tests de l'écran de questionnaire
+│   └── result.test.tsx         # Tests de l'écran de résultats
+└── integration/                 # Tests d'intégration (nouveaux)
+    ├── README.md                # Documentation des tests d'intégration
+    ├── userFlow.integration.test.tsx     # Tests de flux utilisateur complets
+    ├── api.integration.test.tsx          # Tests d'intégration API
+    └── navigation.e2e.test.tsx           # Tests de navigation end-to-end
 ```
 
 ## Configuration
@@ -36,14 +41,26 @@ Les tests utilisent :
 ## Scripts Disponibles
 
 ```bash
-# Lancer tous les tests
+# Lancer tous les tests (unitaires + intégration)
 npm test
 
-# Lancer les tests en mode watch (développement)
+# Tests unitaires seulement
+npm run test:unit
+
+# Tests d'intégration seulement
+npm run test:integration
+
+# Tests en mode watch (développement)
 npm run test:watch
 
-# Lancer les tests avec couverture de code
+# Tests d'intégration en mode watch
+npm run test:integration:watch
+
+# Tests avec couverture de code
 npm run test:coverage
+
+# Tests d'intégration avec couverture
+npm run test:integration:coverage
 
 # Tests pour CI/CD
 npm run test:ci
@@ -63,6 +80,11 @@ Chaque bug corrigé = un nouveau test pour éviter la régression.
 - **Mocks globaux** dans `jest.setup.js`
 - **Helpers réutilisables** pour le rendu avec contexte
 - **Données de test réalistes** alignées sur la structure SQL
+
+### 📊 Couverture Complète
+- **Tests unitaires** : Composants isolés avec mocks complets
+- **Tests d'intégration** : Flux complets avec mocks minimaux
+- **Tests E2E** : Navigation et interactions réelles
 
 ## Tests des Composants
 
@@ -108,6 +130,31 @@ Chaque bug corrigé = un nouveau test pour éviter la régression.
 - ✅ Rendu sans crash
 - ✅ Enveloppe Stack dans PaperProvider
 - ✅ Fourniture du contexte de thème Paper
+
+## Tests d'Intégration (Nouveaux !)
+
+### 🔗 Flux Utilisateur Complets (userFlow.integration.test.tsx)
+- ✅ Parcours Accueil → QCM → Résultats
+- ✅ Transmission des données entre écrans
+- ✅ Gestion d'erreurs cross-composants
+- ✅ Performance des interactions utilisateur
+- ✅ Tests de cohérence des données
+
+### 🌐 Intégration API (api.integration.test.tsx)
+- ✅ Requêtes API avec données réalistes
+- ✅ Gestion des timeouts et erreurs serveur
+- ✅ Validation des structures de données
+- ✅ Tests de performance API
+- ✅ Intégrité questions/réponses
+- ✅ Requêtes concurrent
+
+### 🧭 Navigation End-to-End (navigation.e2e.test.tsx)
+- ✅ Navigation complète entre écrans
+- ✅ Gestion des paramètres d'URL
+- ✅ Deep linking et navigation directe
+- ✅ Stack management et historique
+- ✅ Récupération d'erreurs de navigation
+- ✅ Tests de performance de navigation
 
 ## Mocks
 

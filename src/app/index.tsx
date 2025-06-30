@@ -17,11 +17,15 @@ export default function Index() {
   const router = useRouter();
 
   const handleRedirect = () => {
-    router.navigate({
-      pathname: '/qcm',
-      params: { name: text }
-
-    });
+    try {
+      router.navigate({
+        pathname: '/qcm',
+        params: { name: text }
+      });
+    } catch (error) {
+      console.log('Navigation error:', error);
+      // Optionally show user feedback about navigation error
+    }
   }
 
   return (
@@ -40,6 +44,7 @@ export default function Index() {
           style={styles.input}
           onChangeText={onChangeText}
           value={text}
+          testID="name-input"
         />
         <StatusBar style="auto" />
 
