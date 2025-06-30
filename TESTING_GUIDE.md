@@ -19,6 +19,9 @@ npm run test:report:all
 # Générer un rapport de couverture standard
 npm run test:report
 
+# Générer un rapport d'EFFICACITÉ avec métriques de performance
+npm run test:efficiency
+
 # Tests d'intégration uniquement
 npm run test:integration
 

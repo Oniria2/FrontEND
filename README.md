@@ -133,6 +133,9 @@ npm run test:report
 # Generate COMPLETE report of all tests (unit + integration + E2E)
 npm run test:report:all
 
+# Generate efficiency report with performance metrics
+npm run test:efficiency
+
 # Run tests for CI/CD pipeline
 npm run test:ci
 ```
