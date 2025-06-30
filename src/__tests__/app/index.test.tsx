@@ -9,7 +9,7 @@ jest.mock('expo-router', () => ({
     navigate: mockNavigate,
   }),
   Stack: {
-    Screen: ({ children, ...props }) => children,
+    Screen: ({ children, ...props }: any) => children,
   },
 }));
 
