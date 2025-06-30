@@ -18,6 +18,7 @@
     "test:integration:watch": "jest --testPathPattern=integration --watch",
     "test:integration:coverage": "jest --testPathPattern=integration --coverage --coverageDirectory=coverage/integration",
     "test:report": "jest --coverage --coverageReporters=html --coverageReporters=json --coverageReporters=lcov",
+    "test:report:all": "jest --coverage --verbose --coverageReporters=html --coverageReporters=json --coverageReporters=lcov --coverageReporters=text-summary --detectOpenHandles",
     "test:ci": "jest --ci --coverage --watchAll=false"
   },
   "dependencies": {

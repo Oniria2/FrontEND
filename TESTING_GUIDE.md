@@ -13,7 +13,10 @@ Cette application dispose d'une suite de tests complète comprenant :
 # Exécuter tous les tests
 npm test
 
-# Générer un rapport de couverture complet
+# Générer un rapport COMPLET de tous les tests (RECOMMANDÉ)
+npm run test:report:all
+
+# Générer un rapport de couverture standard
 npm run test:report
 
 # Tests d'intégration uniquement

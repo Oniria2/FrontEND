@@ -130,16 +130,26 @@ npm run test:integration:coverage
 # Generate detailed HTML coverage report
 npm run test:report
 
+# Generate COMPLETE report of all tests (unit + integration + E2E)
+npm run test:report:all
+
 # Run tests for CI/CD pipeline
 npm run test:ci
 ```
 
 ### Test Coverage Report
 
-After running `npm run test:report`, you can view the detailed HTML coverage report by opening:
+After running `npm run test:report:all` (recommended) or `npm run test:report`, you can view the detailed HTML coverage report by opening:
 ```
 coverage/lcov-report/index.html
 ```
+
+**`npm run test:report:all` provides:**
+- ✅ Complete test execution (unit + integration + E2E)
+- ✅ Detailed terminal summary with all metrics
+- ✅ Interactive HTML report with full coverage analysis
+- ✅ JSON and LCOV exports for CI/CD integration
+- ✅ Memory leak detection and performance insights
 
 This interactive report provides:
 - ✅ Line-by-line coverage visualization

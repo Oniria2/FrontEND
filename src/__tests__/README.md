@@ -65,6 +65,9 @@ npm run test:integration:coverage
 # Générer un rapport de tests détaillé (HTML + JSON)
 npm run test:report
 
+# Générer un rapport COMPLET de tous les tests (unitaires + intégration)
+npm run test:report:all
+
 # Tests pour CI/CD
 npm run test:ci
 ```
@@ -216,6 +219,16 @@ Ce script génère :
    - Navigation par fichier
    - Détail ligne par ligne
    - Code coverage highlighting
+
+4. **Rapport TOTAL - Tous les Tests (Recommandé)**
+   ```bash
+   npm run test:report:all
+   ```
+   - **Tous les tests** : unitaires + intégration + E2E
+   - **Rapport HTML complet** avec toutes les métriques
+   - **Résumé détaillé** affiché dans le terminal
+   - **Analyse complète** de la couverture de code
+   - **Détection des handles ouverts** pour identifier les fuites mémoire
 
 ### 📍 Accès au Rapport HTML
 Après génération, ouvrez dans votre navigateur :
