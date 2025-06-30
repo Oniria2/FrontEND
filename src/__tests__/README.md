@@ -2,26 +2,36 @@
 
 Ce dossier contient tous les tests unitaires pour l'application Oniria.
 
+## 📚 Documentation Complète
+
+- **[Architecture et Philosophie](../docs/TESTS_ARCHITECTURE.md)** - Vue d'ensemble détaillée de l'architecture des tests
+- **[Guide de Contribution](../docs/TESTS_CONTRIBUTING.md)** - Instructions pratiques pour écrire et maintenir les tests
+
 ## Structure des Tests
 
 ```
 src/__tests__/
-├── Component/
-│   ├── MyButton.test.tsx
-│   └── TimerComponent.test.tsx
-└── app/
-    ├── _layout.test.tsx
-    ├── index.test.tsx
-    ├── qcm.test.tsx
-    └── result.test.tsx
+├── Component/                    # Tests des composants réutilisables
+│   ├── MyButton.test.tsx        # Tests du composant bouton personnalisé
+│   └── TimerComponent.test.tsx   # Tests du composant timer
+└── app/                         # Tests des écrans de l'application
+    ├── _layout.test.tsx         # Tests du layout principal
+    ├── index.test.tsx           # Tests de l'écran d'accueil
+    ├── qcm.test.tsx            # Tests de l'écran de questionnaire
+    └── result.test.tsx         # Tests de l'écran de résultats
 ```
 
 ## Configuration
 
 Les tests utilisent :
-- **Jest** : Framework de test
+- **Jest** : Framework de test principal
 - **React Native Testing Library** : Utilitaires de test pour React Native
 - **@testing-library/jest-native** : Matchers Jest supplémentaires
+- **Jest Expo** : Preset Jest optimisé pour Expo
+
+### Configuration Centralisée
+- `jest.setup.js` : Mocks globaux et configuration partagée
+- `package.json` : Configuration Jest et scripts de test
 
 ## Scripts Disponibles
 
@@ -29,12 +39,30 @@ Les tests utilisent :
 # Lancer tous les tests
 npm test
 
-# Lancer les tests en mode watch
+# Lancer les tests en mode watch (développement)
 npm run test:watch
 
 # Lancer les tests avec couverture de code
 npm run test:coverage
+
+# Tests pour CI/CD
+npm run test:ci
 ```
+
+## Philosophie des Tests
+
+### 🎯 Approche Comportementale
+Nous testons le **comportement utilisateur** plutôt que l'implémentation technique :
+- ✅ "L'utilisateur voit le message de bienvenue"
+- ❌ "Le state showMessage est true"
+
+### 🔄 Tests de Régression
+Chaque bug corrigé = un nouveau test pour éviter la régression.
+
+### 🏗️ Structure Modulaire
+- **Mocks globaux** dans `jest.setup.js`
+- **Helpers réutilisables** pour le rendu avec contexte
+- **Données de test réalistes** alignées sur la structure SQL
 
 ## Tests des Composants
 
