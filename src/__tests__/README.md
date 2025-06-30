@@ -1,11 +1,6 @@
 # Tests Unitaires - Oniria
 
-Ce dossier contient tous les tests unitaires pour l'application Oniria.
-
-## 📚 Documentation Complète
-
-- **[Architecture et Philosophie](../docs/TESTS_ARCHITECTURE.md)** - Vue d'ensemble détaillée de l'architecture des tests
-- **[Guide de Contribution](../docs/TESTS_CONTRIBUTING.md)** - Instructions pratiques pour écrire et maintenir les tests
+Ce dossier contient toutes les informations les tests pour l'application Oniria.
 
 ## Structure des Tests
 
@@ -72,7 +67,7 @@ npm run test:report:all
 npm run test:ci
 ```
 
-## Philosophie des Tests
+
 
 ### 🎯 Approche Comportementale
 Nous testons le **comportement utilisateur** plutôt que l'implémentation technique :
