@@ -335,8 +335,8 @@ describe('Real API Integration Tests - Heroku', () => {
     it('should handle multiple concurrent requests', async () => {
       const promises = [
         fetchAPI(`${baseURL}/questions/1`),
-        fetchAPI(`${baseURL}/questions/2`),
-        fetchAPI(`${baseURL}/reponse/1`)
+        fetchAPI(`${baseURL}/reponse/1`),
+        fetchAPI(`${baseURL}/reponse/2`)
       ];
       
       const responses = await Promise.all(promises);
@@ -447,8 +447,4 @@ describe('Real API Integration Tests - Heroku', () => {
  * UTILISATION:
  * npm test -- real-api.integration.test.tsx
  * 
- * ⚠️ PRÉREQUIS:
- * - Connexion internet active
- * - API Heroku opérationnelle
- * - Patience (tests plus lents que les mocks)
  */
