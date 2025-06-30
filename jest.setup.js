@@ -126,16 +126,20 @@ jest.mock('react-native-paper', () => {
 // Mock axios
 const mockAxiosGet = jest.fn(() => Promise.resolve({ 
   data: { 
-    intitule: 'Question de test',
-    id: 1 
+    rows: [
+      { id: 1, intitule: 'Comment vous sentez-vous ? ' }
+    ]
   } 
 }));
 
 const mockAxiosPost = jest.fn(() => Promise.resolve({ 
-  data: [
-    { id: 1, intitule: 'Réponse correcte', correct: true },
-    { id: 2, intitule: 'Réponse incorrecte', correct: false }
-  ] 
+  data: {
+    rows: [
+      { id: 1, titre: 'AssezBien', correct: '0', question_id: 1 },
+      { id: 2, titre: 'Bien', correct: '1', question_id: 1 },
+      { id: 3, titre: 'Mal', correct: '0', question_id: 1 }
+    ]
+  } 
 }));
 
 jest.mock('axios', () => ({

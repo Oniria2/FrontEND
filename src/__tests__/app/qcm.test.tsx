@@ -30,7 +30,7 @@ describe('QCM Screen', () => {
     // Mock de la réponse API pour la question
     mockedAxios.get.mockResolvedValueOnce({
       data: {
-        rows: [{ intitule: 'Test Question?' }]
+        rows: [{ id: 1, intitule: 'Comment vous sentez-vous ? ' }]
       }
     });
 
@@ -38,8 +38,9 @@ describe('QCM Screen', () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: {
         rows: [
-          { titre: 'Réponse 1', correct: true },
-          { titre: 'Réponse 2', correct: false }
+          { id: 1, titre: 'AssezBien', correct: '0', question_id: 1 },
+          { id: 2, titre: 'Bien', correct: '1', question_id: 1 },
+          { id: 3, titre: 'Mal', correct: '0', question_id: 1 }
         ]
       }
     });
@@ -52,19 +53,20 @@ describe('QCM Screen', () => {
   });
 
   it('should load and display question from API', async () => {
-    const testQuestion = 'Quelle est la capitale de la France?';
+    const testQuestion = 'Comment vous sentez-vous ? ';
     
     mockedAxios.get.mockResolvedValueOnce({
       data: {
-        rows: [{ intitule: testQuestion }]
+        rows: [{ id: 1, intitule: testQuestion }]
       }
     });
 
     mockedAxios.get.mockResolvedValueOnce({
       data: {
         rows: [
-          { titre: 'Paris', correct: true },
-          { titre: 'Londres', correct: false }
+          { id: 1, titre: 'AssezBien', correct: '0', question_id: 1 },
+          { id: 2, titre: 'Bien', correct: '1', question_id: 1 },
+          { id: 3, titre: 'Mal', correct: '0', question_id: 1 }
         ]
       }
     });
@@ -79,16 +81,16 @@ describe('QCM Screen', () => {
   it('should display response options', async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: {
-        rows: [{ intitule: 'Test Question?' }]
+        rows: [{ id: 2, intitule: 'Que pensez-vous de votre environnement de travail ? ' }]
       }
     });
 
     mockedAxios.get.mockResolvedValueOnce({
       data: {
         rows: [
-          { titre: 'Option 1', correct: true },
-          { titre: 'Option 2', correct: false },
-          { titre: 'Option 3', correct: false }
+          { id: 4, titre: 'Peut être améliorer', correct: '0', question_id: 2 },
+          { id: 5, titre: 'Ne convient pas', correct: '0', question_id: 2 },
+          { id: 6, titre: 'Est idéal', correct: '1', question_id: 2 }
         ]
       }
     });
@@ -96,24 +98,25 @@ describe('QCM Screen', () => {
     const { getByText } = render(<QCM />);
     
     await waitFor(() => {
-      expect(getByText('Option 1')).toBeTruthy();
-      expect(getByText('Option 2')).toBeTruthy();
-      expect(getByText('Option 3')).toBeTruthy();
+      expect(getByText('Peut être améliorer')).toBeTruthy();
+      expect(getByText('Ne convient pas')).toBeTruthy();
+      expect(getByText('Est idéal')).toBeTruthy();
     });
   });
 
   it('should handle correct answer selection', async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: {
-        rows: [{ intitule: 'Test Question?' }]
+        rows: [{ id: 1, intitule: 'Comment vous sentez-vous ? ' }]
       }
     });
 
     mockedAxios.get.mockResolvedValueOnce({
       data: {
         rows: [
-          { titre: 'Correct Answer', correct: true },
-          { titre: 'Wrong Answer', correct: false }
+          { id: 1, titre: 'AssezBien', correct: '0', question_id: 1 },
+          { id: 2, titre: 'Bien', correct: '1', question_id: 1 },
+          { id: 3, titre: 'Mal', correct: '0', question_id: 1 }
         ]
       }
     });
@@ -121,23 +124,24 @@ describe('QCM Screen', () => {
     const { getByText } = render(<QCM />);
     
     await waitFor(() => {
-      const correctButton = getByText('Correct Answer');
+      const correctButton = getByText('Bien');
       expect(correctButton).toBeTruthy();
     });
   });
 
-  it('should navigate to result screen after last question', async () => {
-    // Mock initial question
+  it('should display work accident question', async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: {
-        rows: [{ intitule: 'Last Question?' }]
+        rows: [{ id: 3, intitule: 'Avez-vous eu un accident de travail ?' }]
       }
     });
 
     mockedAxios.get.mockResolvedValueOnce({
       data: {
         rows: [
-          { titre: 'Final Answer', correct: true }
+          { id: 7, titre: 'moins de 3 mois', correct: '0', question_id: 3 },
+          { id: 8, titre: 'plus de 3 mois', correct: '0', question_id: 3 },
+          { id: 9, titre: 'Non', correct: '1', question_id: 3 }
         ]
       }
     });
@@ -145,7 +149,37 @@ describe('QCM Screen', () => {
     const { getByText } = render(<QCM />);
     
     await waitFor(() => {
-      expect(getByText('Last Question?')).toBeTruthy();
+      expect(getByText('Avez-vous eu un accident de travail ?')).toBeTruthy();
+      expect(getByText('moins de 3 mois')).toBeTruthy();
+      expect(getByText('plus de 3 mois')).toBeTruthy();
+      expect(getByText('Non')).toBeTruthy();
+    });
+  });
+
+  it('should display recommendation question', async () => {
+    mockedAxios.get.mockResolvedValueOnce({
+      data: {
+        rows: [{ id: 4, intitule: 'Recommanderiez-vous les postes à pourvoir à vos connaissances ? ' }]
+      }
+    });
+
+    mockedAxios.get.mockResolvedValueOnce({
+      data: {
+        rows: [
+          { id: 10, titre: 'Oui', correct: '1', question_id: 4 },
+          { id: 11, titre: 'Non', correct: '0', question_id: 4 },
+          { id: 12, titre: 'Possiblement', correct: '0', question_id: 4 }
+        ]
+      }
+    });
+
+    const { getByText } = render(<QCM />);
+    
+    await waitFor(() => {
+      expect(getByText('Recommanderiez-vous les postes à pourvoir à vos connaissances ? ')).toBeTruthy();
+      expect(getByText('Oui')).toBeTruthy();
+      expect(getByText('Non')).toBeTruthy();
+      expect(getByText('Possiblement')).toBeTruthy();
     });
   });
 
