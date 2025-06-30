@@ -1,6 +1,16 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
+import { PaperProvider } from 'react-native-paper';
 import MyButton from '../../Component/MyButton';
+
+// Wrapper pour fournir le contexte PaperProvider
+const renderWithProvider = (component: React.ReactElement) => {
+  return render(
+    <PaperProvider>
+      {component}
+    </PaperProvider>
+  );
+};
 
 describe('MyButton Component', () => {
   const mockHandleRedirect = jest.fn();
@@ -11,7 +21,7 @@ describe('MyButton Component', () => {
   });
 
   it('should render correctly with given props', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithProvider(
       <MyButton handleRedirect={mockHandleRedirect} buttonText={buttonText} />
     );
     
@@ -19,7 +29,7 @@ describe('MyButton Component', () => {
   });
 
   it('should call handleRedirect when pressed', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithProvider(
       <MyButton handleRedirect={mockHandleRedirect} buttonText={buttonText} />
     );
     
@@ -31,7 +41,7 @@ describe('MyButton Component', () => {
 
   it('should have correct button text', () => {
     const customText = 'Custom Button Text';
-    const { getByText } = render(
+    const { getByText } = renderWithProvider(
       <MyButton handleRedirect={mockHandleRedirect} buttonText={customText} />
     );
     
@@ -39,7 +49,7 @@ describe('MyButton Component', () => {
   });
 
   it('should render with elevated mode', () => {
-    const { getByText } = render(
+    const { getByText } = renderWithProvider(
       <MyButton handleRedirect={mockHandleRedirect} buttonText={buttonText} />
     );
     
