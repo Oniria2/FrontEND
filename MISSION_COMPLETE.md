@@ -126,7 +126,4 @@ La mission est **accomplie avec succès** :
 
 L'application Oniria dispose maintenant d'une **couverture de tests unitaires professionnelle**, alignée sur les **standards de l'industrie** et prête pour la **production**.
 
----
 
-*Tests unitaires Oniria - Version 1.0*  
-*Génération automatique avec GitHub Copilot*
