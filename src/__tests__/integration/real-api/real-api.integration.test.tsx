@@ -22,20 +22,47 @@
  * et que l'API Heroku soit opérationnelle.
  */
 
-// Import axios non-mocké - on utilise fetch au lieu d'axios pour éviter les mocks
-// const axios = require('axios');
-
 describe('Real API Integration Tests - Heroku', () => {
   const baseURL = 'https://qcm-api-a108ec633b51.herokuapp.com';
   
   // Helper pour faire des requêtes HTTP sans axios mocké
   const fetchAPI = async (url: string) => {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+    
+    try {
+      const response = await fetch(url, { 
+        signal: controller.signal,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        }
+      });
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      return response.json();
+    } catch (error) {
+      clearTimeout(timeoutId);
+      throw error;
     }
-    return response.json();
   };
+
+  // Nettoyage après tous les tests pour éviter les handles ouverts
+  afterAll(async () => {
+    // Attendre que toutes les connexions fetch se ferment
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Forcer la collecte des ordures pour nettoyer les références
+    if (global.gc) {
+      global.gc();
+    }
+  });
+
+  // Timeout plus long pour les tests d'API réelle
+  jest.setTimeout(15000);
 
   /**
    * ========================================

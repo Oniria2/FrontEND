@@ -51,6 +51,12 @@ npm run test:watch
 # Tests d'intégration en mode watch
 npm run test:integration:watch
 
+# Tests d'API réelle (Heroku) - Force la fermeture des handles
+npm run test:real-api
+
+# Tests d'API réelle en mode watch
+npm run test:real-api:watch
+
 # Tests avec couverture de code
 npm run test:coverage
 
@@ -260,7 +266,48 @@ npm run test:watch
 
 # Tests avec rapport de couverture
 npm run test:coverage
+
+# Tests d'API réelle (avec gestion des connexions)
+npm run test:real-api
 ```
+
+## Gestion des Handles Ouverts (Tests API Réelle)
+
+Les tests d'API réelle peuvent laisser des connexions ouvertes. Solutions :
+
+### ⚠️ Problème courant :
+```
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+●  TLSWRAP
+```
+
+### ✅ Solutions implémentées :
+
+1. **Script spécialisé avec forceExit** :
+   ```bash
+   npm run test:real-api
+   ```
+   Ce script utilise `--forceExit` et `--detectOpenHandles` pour fermer proprement.
+
+2. **Timeout et AbortController** :
+   - Chaque requête fetch utilise un AbortController
+   - Timeout de 10 secondes par requête
+   - Nettoyage automatique des timeouts
+
+3. **Nettoyage après tests** :
+   ```typescript
+   afterAll(async () => {
+     // Attendre que les connexions se ferment
+     await new Promise(resolve => setTimeout(resolve, 500));
+     if (global.gc) global.gc(); // Garbage collection
+   });
+   ```
+
+### 📊 Recommandations :
+
+- **Développement** : Utilisez `npm run test:real-api:watch`
+- **CI/CD** : Utilisez `npm run test:real-api` (avec forceExit)
+- **Tests unitaires** : Utilisez `npm test` (pas de handles ouverts)
 
 ## Débuggage
 
