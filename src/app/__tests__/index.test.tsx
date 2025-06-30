@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { PaperProvider } from 'react-native-paper';
-import Index from '../index';
+import Index from '../../app/index';
 
 // Mock expo-router
 jest.mock('expo-router', () => ({
