@@ -62,6 +62,9 @@ npm run test:coverage
 # Tests d'intégration avec couverture
 npm run test:integration:coverage
 
+# Générer un rapport de tests détaillé (HTML + JSON)
+npm run test:report
+
 # Tests pour CI/CD
 npm run test:ci
 ```
@@ -174,6 +177,58 @@ Les tests couvrent :
 - Appels API
 - Gestion des erreurs
 - Interactions utilisateur
+
+## Génération de Rapports
+
+### 📊 Rapport de Tests Complet
+```bash
+# Générer un rapport HTML détaillé avec couverture
+npm run test:report
+```
+
+Ce script génère :
+- **Rapport HTML interactif** : `coverage/lcov-report/index.html`
+- **Rapport JSON** : `coverage/coverage-final.json`
+- **Rapport LCOV** : `coverage/lcov.info`
+- **Métriques détaillées** par fichier et fonction
+
+### 📈 Types de Rapports Disponibles
+
+1. **Rapport de Couverture Standard**
+   ```bash
+   npm run test:coverage
+   ```
+   - Affichage dans le terminal
+   - Métriques globales (statements, branches, functions, lines)
+
+2. **Rapport d'Intégration**
+   ```bash
+   npm run test:integration:coverage
+   ```
+   - Couverture spécifique aux tests d'intégration
+   - Métriques des flux complets
+
+3. **Rapport Complet (HTML)**
+   ```bash
+   npm run test:report
+   ```
+   - Interface web interactive
+   - Navigation par fichier
+   - Détail ligne par ligne
+   - Code coverage highlighting
+
+### 📍 Accès au Rapport HTML
+Après génération, ouvrez dans votre navigateur :
+```
+coverage/lcov-report/index.html
+```
+
+Le rapport interactif permet de :
+- ✅ Naviguer dans l'arborescence des fichiers
+- ✅ Voir la couverture ligne par ligne avec code highlighting
+- ✅ Identifier les branches non testées (rouge/vert)
+- ✅ Analyser les métriques par composant
+- ✅ Exporter les données pour CI/CD
 
 ## Bonnes Pratiques
 

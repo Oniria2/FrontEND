@@ -99,6 +99,61 @@ The best coding practices that must be applied to this project:
 To start the application on your phone, run the following command:  
 `npm start`.
 
+## Testing
+
+This project includes comprehensive test suites covering unit tests, integration tests, and end-to-end tests.
+
+### Available Test Commands
+
+```bash
+# Run all tests (unit + integration)
+npm test
+
+# Run tests in watch mode (during development)
+npm run test:watch
+
+# Run only unit tests
+npm run test:unit
+
+# Run only integration tests  
+npm run test:integration
+
+# Run integration tests in watch mode
+npm run test:integration:watch
+
+# Generate coverage reports
+npm run test:coverage
+
+# Generate integration test coverage
+npm run test:integration:coverage
+
+# Generate detailed HTML coverage report
+npm run test:report
+
+# Run tests for CI/CD pipeline
+npm run test:ci
+```
+
+### Test Coverage Report
+
+After running `npm run test:report`, you can view the detailed HTML coverage report by opening:
+```
+coverage/lcov-report/index.html
+```
+
+This interactive report provides:
+- ✅ Line-by-line coverage visualization
+- ✅ Branch coverage analysis  
+- ✅ Function coverage metrics
+- ✅ File-by-file navigation
+- ✅ Overall project statistics
+
+### Test Documentation
+
+For detailed information about the test architecture and guidelines, see:
+- `src/__tests__/README.md` - Complete testing documentation
+- `src/__tests__/integration/README.md` - Integration test specifics
+
 ## Getting Started with React Native  
 
 Documentation link: [React Native Documentation](https://reactnative.dev/docs/environment-setup).
