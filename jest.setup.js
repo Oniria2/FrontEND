@@ -43,8 +43,10 @@ jest.mock('expo-router', () => ({
     replace: mockReplace,
     back: mockBack,
   },
-  Stack: {
-    Screen: ({ children, ...props }) => children,
+  Stack: ({ children, ...props }) => {
+    const React = require('react');
+    const { View } = require('react-native');
+    return React.createElement(View, { testID: 'stack', ...props }, children);
   },
 }));
 
